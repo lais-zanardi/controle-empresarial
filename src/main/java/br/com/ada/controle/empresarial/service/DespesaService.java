@@ -14,15 +14,15 @@ public class DespesaService {
         this.despesaRepository = despesaRepository;
     }
 
-    public Despesa save(Despesa despesa) {
+    public Despesa salvarDespesa(Despesa despesa) {
         return despesaRepository.save(despesa);
     }
 
-    public List<Despesa> listAll() {
+    public List<Despesa> listarDespesas() {
         return (List<Despesa>) despesaRepository.findAll();
     }
 
-    public Despesa despesasPorNF(Long nf) {
+    public Despesa listarDespesasPorNF(Long nf) {
         return despesaRepository.findById(nf).orElse(null);
     }
 

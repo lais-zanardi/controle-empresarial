@@ -18,26 +18,25 @@ public class FuncionarioController {
 
         @PostMapping("/funcionarios")
         public Funcionario salvar(@RequestBody Funcionario funcionario) {
-            return funcionarioService.save(funcionario);
+            return funcionarioService.salvarFuncionario(funcionario);
         }
 
         @GetMapping("/funcionarios")
         public List<Funcionario> list() {
-            return funcionarioService.listAll();
+            return funcionarioService.listarFuncionarios();
         }
 
         @GetMapping("/funcionarios/{id}")
-        public Funcionario usuarioPorId(@PathVariable Long id) {
-            return funcionarioService.listById(id);
+        public Funcionario funcionarioPorId(@PathVariable Long id) {
+            return funcionarioService.listarFuncionariosPorId(id);
         }
 
         @DeleteMapping("/funcionarios/{id}")
-        public void deleteUsuarioPorId(@PathVariable Long id) {
-            funcionarioService.deleteById(id);
+        public void deleteFuncionarioPorId(@PathVariable Long id) {
+            funcionarioService.deletarFuncionarios(id);
         }
 
 
 
     }
 
-}

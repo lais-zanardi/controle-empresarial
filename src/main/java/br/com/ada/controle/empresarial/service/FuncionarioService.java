@@ -15,21 +15,19 @@ public class FuncionarioService {
             this.funcionarioRepository = funcionarioRepository;
         }
 
-        public Funcionario save(Funcionario funcionario) {
+        public Funcionario salvarFuncionario(Funcionario funcionario) {
             return funcionarioRepository.save(funcionario);
         }
 
-        public List<Funcionario> listAll() {
+        public List<Funcionario> listarFuncionarios() {
             return (List<Funcionario>) funcionarioRepository.findAll();
         }
 
-        public Funcionario listById(Long id) {
+        public Funcionario listarFuncionariosPorId(Long id) {
             return funcionarioRepository.findById(id).orElse(null);
         }
 
-        public void deleteById(Long id) {
+        public void deletarFuncionarios(Long id) {
             funcionarioRepository.deleteById(id);
         }
     }
-
-}

@@ -19,22 +19,22 @@ public class DespesaController {
 
     @PostMapping("/despesas")
     public Despesa salvar(@RequestBody Despesa despesa) {
-        return despesaService.save(despesa);
+        return despesaService.salvarDespesa(despesa);
     }
 
     @GetMapping("/despesas")
     public List<Despesa> list() {
-        return despesaService.listAll();
+        return despesaService.listarDespesas();
     }
 
     @GetMapping("/despesas/{nf}")
     public Despesa despesasPorNF(@PathVariable Long nf) {
-        return despesaService.listById(nf);
+        return despesaService.listarDespesasPorNF(nf);
     }
 
     @DeleteMapping("/despesas/{nf}")
     public void deleteNF(@PathVariable Long nf) {
-        despesaService.deleteById(nf);
+        despesaService.deleteNF(nf);
     }
 
 
